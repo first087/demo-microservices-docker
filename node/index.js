@@ -7,6 +7,13 @@ app.get('/', (req, res) => {
     res.send({
         ip: require('ip').address(),
         counter: ++counter,
+        date: new Date(),
+        note: {
+            at: "Comscicafe",
+            by: "Ethan's Blog",
+            website: "http://www.artit-k.com",
+            fbPage: "@ethanblog",
+        },
     })
 })
 
