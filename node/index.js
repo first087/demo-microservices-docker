@@ -3,7 +3,7 @@ const redis = require('redis')
 
 const app = express()
 
-const redisClient = redis.createClient(6379, 'localhost')
+const redisClient = redis.createClient(6379, 'redis')
 
 app.get('/', (req, res) => {
     redisClient.incr('counter')
