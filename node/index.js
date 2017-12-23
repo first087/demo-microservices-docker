@@ -13,6 +13,10 @@ app.get('/', (req, res) => {
             by: "Ethan's Blog",
             website: "http://www.artit-k.com",
             fbPage: "@ethanblog",
+            sponsor: {
+                by: "roofimon",
+                website: "http://www.roofimon.com/",
+            },
         },
     })
 })
