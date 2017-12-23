@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
     redisClient.get('counter', (err, reply) => {
         res.send({
-            ip: require('ip').address(),
+            ip: require('./ip').address(),
             counter: Number(reply),
             date: new Date(),
             note: {
