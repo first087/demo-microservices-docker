@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  web:
+    image: first087/demo-microservices-docker-nodeapp:nginx 
+    ports:
+      - 80:80
+    deploy:
+      mode: global
+    networks:
+      - app-network
+
+  nodeapp:
+    image: first087/demo-microservices-docker-nodeapp:nodeapp
+    deploy:
+      replicas: 10
+    networks:
+      - app-network
+
+  redis:
+    image: redis:4.0-alpine
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: overlay
