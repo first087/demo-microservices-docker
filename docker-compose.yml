@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  web:
+    image: first087/demo-microservices-docker-nodeapp:nginx
+    ports:
+      - 80:80
+    depends_on:
+      - nodeapp
+  nodeapp:
+    image: first087/demo-microservices-docker-nodeapp:nodeapp
+    depends_on:
+      - redis
+  redis:
+    image: redis:4.0-alpine
